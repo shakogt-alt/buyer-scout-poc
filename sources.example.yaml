@@ -1,0 +1,54 @@
+# Скопировать в config/sources.yaml и заполнить.
+# Реальный файл в .gitignore — в нём названия групп.
+#
+# Целевое распределение по концепту, §13:
+#   A. Real Estate          5-7
+#   B. Expats               3-4
+#   C. Relocation/community 2-3
+#   D. Investment           1-2
+#   E. High-noise control   2
+# Итого 10-20 источников. География: Тбилиси, Батуми, Грузия.
+# Языки: ru, en, ka.
+
+collection:
+  start_date: 2026-10-01
+  min_days: 7
+  extend_to_days: 14      # если объём мал или видна недельная сезонность
+
+sources:
+  - id: "-1001234567890"
+    name: "Недвижимость Тбилиси"
+    type: A
+    city: tbilisi
+    langs: [ru]
+    est_messages_per_day: 800
+
+  - id: "-1009876543210"
+    name: "Expats in Georgia"
+    type: B
+    city: georgia
+    langs: [en, ru]
+    est_messages_per_day: 400
+
+  - id: "-1001111111111"
+    name: "Relocation Georgia"
+    type: C
+    city: georgia
+    langs: [ru]
+    est_messages_per_day: 250
+
+  - id: "-1002222222222"
+    name: "Инвестиции в Грузии"
+    type: D
+    city: georgia
+    langs: [ru]
+    est_messages_per_day: 150
+
+  # Группы типа E нужны специально: проверяют, умеет ли модель
+  # отбрасывать объявления агентов, аренду, рекламу и спам.
+  - id: "-1003333333333"
+    name: "Аренда и продажа Батуми — общий"
+    type: E
+    city: batumi
+    langs: [ru, en]
+    est_messages_per_day: 1500

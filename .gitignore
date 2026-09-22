@@ -1,0 +1,26 @@
+# Персональные данные третьих лиц — НИКОГДА не коммитить
+data/
+exports/
+*.db
+*.sqlite
+*.sqlite3
+*.jsonl
+
+# Секреты
+.env
+.env.*
+!.env.example
+
+# Конфиг с реальными названиями групп
+config/sources.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Прочее
+.DS_Store
+*.log
